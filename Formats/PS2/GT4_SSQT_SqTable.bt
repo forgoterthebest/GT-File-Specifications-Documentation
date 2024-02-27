@@ -45,6 +45,8 @@ local int end = false;
 
 typedef struct
 {
+    DeltaTime delta;
+
     ubyte m_status <format=hex>;
     if (m_status & 0x80)
         lastStatus = m_status;
@@ -161,8 +163,7 @@ typedef struct
     
     if (end)
         return;
-        
-    DeltaTime delta;
+
 } MidiMessage <comment=MidiMessageToString>;
 
 string MidiMessageToString(MidiMessage& msg)
